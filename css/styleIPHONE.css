@@ -1,0 +1,138 @@
+@media all AND (max-width:375px)/***IPHONE X HOR***/
+{
+/***********SITE WEB**************/
+    /***NAV***/
+    nav{
+        height:6vh;
+        background-color:white;
+    }
+    nav ul{
+        margin-left:26vw;
+    }
+    nav ul li{
+        width:8vw;
+    }
+    #MODE p0{
+        font-size:8px
+    }
+    .barrech
+/*******ADMINISTRATION********************/
+
+    /***NAV***/
+    #connexion{
+        width:72vw;
+        height:14vh;
+    }
+    #connexion h1{
+        font-size:14px;
+        margin-top:1vh;
+        margin-right:0.5vw;
+    }
+    #bloco{
+        height: 14vh;
+        width:37vw;
+        margin-left:1vw;
+    }
+    .textform{
+        margin-left:0.5vw;
+        font-size:8px;
+        margin-left:1.3vw;
+        margin-top:-0.4vh;
+    }
+    #boutco{
+        width:12vw;
+        height:4vh;
+        font-size:8px;
+        margin-left:0vw;
+        margin-top:-2vh;
+        margin-left:1.3vw;
+    }
+     /***MENU***/
+    .Menu{
+     
+        width:100px;
+        height:200px;
+        margin-left:0vw;
+        margin-top:8vh;
+        background-image: none;
+        background-color: white;;
+    }
+    h4{
+        font-size:17px;
+        margin-top:5vh;
+        margin-left:1vw;
+    }
+    #options a{
+        font-size:8px;
+        margin-top:-1vh;
+        margin-left:13vw;
+    }
+
+    /*****BURGERBOUT******/
+    #burgerbout{
+        width:5vw;
+    }
+    .bar{
+        width:4vw;
+    }
+    .bar2{
+        width:4vw;
+    }
+    .bar3{
+        width:4vw;
+    }
+    /***LOGO MENU***/
+    #logomenu{
+        margin-right:26vw;
+    }
+    /***RECHERCHE***/
+    .barrech{
+        width:25vw;
+    }
+    #barre{
+        width:20vw;
+        border-bottom:0.5px #2D2A2A solid;
+    }
+    #button img{
+        width:5vw;
+    }
+    /***CHGT LANGUE***/
+    .langue{
+        font-size:8px;
+    }
+
+    /***BLOC TEXT***/
+    .bloctext{
+        height:85vh;
+    }
+
+    /***SLIDE ACCUEIL***/
+    #slideAcc{
+        height:87vh;
+    }
+    .textacc{
+        text-align:left;
+        margin-top:32vh;
+    }
+    p1{
+        font-size:14px;
+    }
+    p11,p12{
+        font-size:15px;
+    }
+    .bloctext h1{
+        font-size:80px;
+        letter-spacing:.5vw;
+        transform:rotate(-90deg);
+        margin-left:35vw;
+        margin-top:62vh;
+    }
+    .numpage p{
+        font-size:6px;  
+        padding-left:.4vw;
+    }
+    /***SLIDE HIST***/
+    #slidehist{
+        background-color:aqua;
+    }
+}

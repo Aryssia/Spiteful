@@ -1,0 +1,409 @@
+*{
+    margin:0;
+    padding:0;
+}
+html , body{
+    width:var(--w);
+    height:var(--h);
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+    background-color:white;
+}
+:root{
+    --h:100%;
+    --w:100%;
+    --pr:relative;
+    --pa:absolute;
+    --fs:18px;
+    --n:#2D2A2A;
+    --o:#EC6608;
+    --m:#BF034D;
+    --v:#62d600;
+    --b:#92eaff;
+    --r:#ff35c5;
+    --j:#ffeb00;
+}
+@font-face{
+    font-family: "theboldfont";
+    src:url(../typo/the_bold_font/theboldfont.ttf);
+}
+@font-face{
+    font-family: "Cabrion - Light";
+    src:url(../typo/cabrion/Cabrion\ -\ Light.otf);
+}
+@font-face{
+    font-family: "Simple Print";
+    src:url(../typo/simple_print/Simple\ Print.ttf);
+}
+@font-face{
+    font-family: "Hasteristico";
+    src:url(../typo/hasteristico/Hasteristico.ttf);
+}
+@font-face{
+    font-family: "HasteristicoBOLD";
+    src:url(../typo/hasteristico/HasteristicoBOLD.ttf);
+}
+/********MESS ERROR**********/
+.noco{
+    width:30vw;
+    height:30vh;
+    background-color: var(--n);
+    color:var(--m);
+}
+/********************************NAV**********************/
+nav{
+    width:var(--w);
+    height:10vh;
+    position: var(--pr);
+    display:flex;
+    overflow:hidden;
+}
+#form{
+    overflow:hidden;
+}
+#connexion{
+    width:80vw;
+    display:flex;
+    margin-top:2vh;
+    margin-left:5vw;
+}
+#connexion h1{
+    font-family:"theboldfont";
+    font-size:28px;
+    color:var(--v);
+    margin-right:2vw;
+}
+#bloco{
+    width:65vw;
+    height:4vh;
+    background-color:var(--v);
+    overflow:hidden;
+}
+.BJR{
+    width:30vw;
+    height:4vh;
+    display:flex;
+}
+#bjr, #deco{
+    margin-top:1vh;
+}
+#bjr, #deco, #Admin, #Mdp{
+    width:17vw;
+    font-family:'Hasteristico';
+    font-size:16px;
+    color:white;
+    letter-spacing: 0.1vw;
+    margin-left:1vw;
+    margin-top:1vw;
+}
+#deco a{
+    text-decoration:none;
+    color:white;
+    cursor:pointer;
+}
+#deco a:hover{
+    color:var(--n);
+    transition:all 0.25s ease-in-out;
+}
+.textform{
+    height:4vh;
+    font-family:'theboldfont';
+    font-size:16px;
+    color:white;
+    border:none;
+    background:none;
+    margin-left:1vw;
+}
+#Admin, #Mdp{
+    background:none;
+    border:none;
+    border-bottom:1px white solid;
+}
+#boutco{
+    width:5vw;
+    height:5vh;
+    font-size:16px;
+    background:none;
+    border:none;
+    text-align:center;
+    font-family:"theboldfont";
+    color:white;
+    margin-left:2.3vw;
+}
+#boutco:hover{
+    color:var(--n);
+    transition:all 0.25s ease-in-out;
+}
+/********BURGER*********/
+#burgerbout{
+    width: 2vw;
+    height:3vh;
+    cursor:pointer;
+    position:fixed;
+    margin-top:3vh;
+    display:flex;
+    margin-left:90vw;
+    flex-direction:column;
+}
+.bar{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: #2D2A2A;
+    margin-bottom:0.6vh;
+    margin-left:0.6vw;
+}
+.bar2{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: #2D2A2A;
+    margin-left:0.3vw;
+    margin-bottom:0.6vh;
+}
+.bar3{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: #2D2A2A;
+}
+/******************************MENU*************************/
+.Menu{
+    width:600PX;
+    height:600px;
+    text-align:center;
+    margin-top:15vh;
+    position:var(--pr);
+    transform: rotate(90);
+    overflow:hidden;
+    z-index:10000;
+    transition: 1s;
+    background-image: url(../images/Illu/MENU.png.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:white;
+}
+/*.open{
+    left: 0;
+    opacity: 1;
+}*/
+h4{
+    font-size:60px;
+    color:var(--o);
+    margin-top:17vh;
+    margin-left:-13vw;
+    font-family: "HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+#options{
+    margin-left:-13vw;
+    transition:all 0.25s ease-in-out;
+}
+#options a{
+    color:var(--n);
+    text-decoration: none;
+    font-family: "HasteristicoBOLD";
+    font-size:20px;
+    letter-spacing:0.1vw;
+}
+#options a:hover{
+    color:var(--m);
+}
+
+/******************************BlocAdmin**************/
+.bloctext{
+    position:var(--pr);
+    width:50%;
+    height:90vh;
+}
+#blocadmi{
+    width:var(--w);
+    height:90vh;
+    position:var(--pr);
+    overflow:hidden;
+    display:flex;
+}
+#mambav{
+    width:50vw;
+    height:50vh;
+    background-image:url(../images/PNG/Green\ Mamba\ ret.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-top:25vh;
+    margin-left:-10vw;
+}
+#titreP{
+    width:23vw;
+    height:15vh;
+    transform:rotate(-90deg);
+    margin-left:18vw;
+    margin-top:-30vh;
+}
+h2{
+    font-family:"theboldfont";
+    font-size:120px;
+    color:var(--n);
+}
+
+/**************************ADMINISTRATION CHOIX***********************/
+#PHOTOS{
+    width:30vw;
+    height:90vh;
+    position:var(--pr);
+    margin-top:28vh;
+    margin-left:-13vw;
+}
+.photos{
+    width:60vw;
+    height:5h;
+    display:flex;
+    position:var(--pr);
+    margin-bottom:0.5vh;
+}
+.slide, .nom, .photo{
+    width:10vw;
+    height:4vh;
+    font-family:"Cabrion - Light";
+    font-size:20px;
+    text-align: left;
+    line-height:200%;
+}
+.photo img{
+    width:10vw;
+    height:4vh;
+}
+/***************BlocVid****************/
+#blocvid{
+    width:var(--w);
+    height:var(--h);
+    position:var(--pr);
+    overflow:hidden;
+    display:flex;
+}
+#VIDEOS{
+    width:30vw;
+    height:90vh;
+    position:var(--pr);
+    margin-top:28vh;
+    margin-left:5vw;
+}
+#meduse{
+    width:70vw;
+    height:70vh;
+    background-image:url(../images/PNG/Chironex\ Flexkeri.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-top:25vh;
+    transform:rotate(-45deg);
+    position:var(--pr);
+}
+.videos{
+    width:60vw;
+    height:5h;
+    display:flex;
+    position:var(--pr);
+    margin-bottom:0.5vh;
+}
+.video{
+    width:10vw;
+    height:4vh;
+    background-color:#2D2A2A;
+}
+#titreV{
+    width:23vw;
+    height:15vh;
+    transform:rotate(-90deg);
+    margin-top:-80vh;
+    margin-left:35vw;
+}
+/*********************LIENS******************/
+.ajouter a, .modifier a, .supprimer a{
+    text-decoration:none;
+}
+.modifier, .supprimer{
+    z-index:1000;
+}
+.modifier a{
+    font-family:'theboldfont';
+    font-size:16px;
+    color:var(--n);
+    cursor:pointer;
+    margin-left:2vw;
+    margin-top:2vh;
+}
+.supprimer a{
+    font-family:'theboldfont';
+    font-size:16px;
+    color:var(--m);
+    cursor:pointer;
+    margin-top:2vh;
+    margin-left:2vw;
+}
+.ajouter a{
+    font-family:'theboldfont';
+    font-size:24px;
+    color:var(--n);
+    cursor:pointer;
+}
+.modifier a:hover, .ajouter a:hover{
+    transition:all 0.25s ease-in-out;
+    color:var(--o);
+}
+.supprimer a:hover{
+    transition:all 0.25s ease-in-out;
+    color:var(--n);
+}
+/***************MESSAGE ERROR******************/
+.messerror{
+    width:50vw;
+    height:50vh;
+    background-color:var(--m);
+    border-radius:50%;
+    text-align: center;
+    line-height:50%;
+    color:white;
+}
+
+
+
+/************************MEDIA QUERIES*********************/
+@media all AND (max-width:1024px)/***IPAD HOR***/
+{
+    /***NAV***/
+    #connexion{
+        width:82vw;
+    }
+    #connexion h1{
+        font-size:20px;
+        margin-top:1vh;
+        margin-right:1vw;
+    }
+    #bloco{
+        height:5vh;
+    }
+    .textform{
+        margin-left:0.5vw;
+        font-size:12px;
+    }
+    #boutco{
+        width:7vw;
+        height:4vh;
+        font-size:12px;
+        margin-left:0vw;
+    }
+     /***MENU***/
+    .Menu{
+        width:400px;
+        height:400px;
+        margin-left:0vw;
+        margin-top:8vh;
+    }
+    h4{
+        font-size:40px;
+    }
+    #options a{
+        font-size:14px;
+    }
+
+}
+

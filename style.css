@@ -1,0 +1,1281 @@
+:root{
+    --h:100%;
+    --w:100%;
+    --pr:relative;
+    --pa:absolute;
+    --fs:18px;
+    --n:#2D2A2A;
+    --o:#EC6608;
+    --m:#BF034D;
+    --v:#62d600;
+    --b:#92eaff;
+    --r:#ff35c5;
+    --j:#ffeb00;
+    --bl:#ffffff;
+}
+
+@font-face{
+    font-family: "theboldfont";
+    src:url(typo/the_bold_font/theboldfont.ttf);
+}
+@font-face{
+    font-family: "Cabrion - Light";
+    src:url(typo/cabrion/Cabrion\ -\ Light.otf);
+}
+@font-face{
+    font-family: "Simple Print";
+    src:url(typo/simple_print/Simple\ Print.ttf);
+}
+@font-face{
+    font-family: "Hasteristico";
+    src:url(typo/hasteristico/Hasteristico.ttf);
+}
+@font-face{
+    font-family: "HasteristicoBOLD";
+    src:url(typo/hasteristico/HasteristicoBOLD.ttf);
+}
+*{
+    margin:0;
+    padding:0;
+}
+html , body{
+    width:var(--w);
+    height:var(--h);
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+    background-color:var(--bl);
+}
+/**1920 x 1080**/
+/********************NAV***************************/
+nav{
+    width:var(--w);
+    height:8vh;
+    position: var(--pr);
+    display:flex;
+    overflow:hidden;
+    z-index:10000;
+    background-color:var(--bl);
+}
+nav ul{
+    position: var(--pr);
+    width: var(--w); 
+    height: var(--h);
+    display:flex;
+    line-height:200%; /*hauteur du texte, pas coller*/
+    margin-left:20vw;
+}
+nav ul li{
+    width:7vw;
+    position:var(--pr);
+    height:var(--h);
+    text-decoration:none;
+    overflow:hidden;
+    text-decoration:none;
+}
+li a{
+    text-decoration:none;
+}
+li a:hover{
+    color:var(--m);
+}
+#MODE{
+    width:8vw;
+    height:3vh;
+    display:flex;
+    position:fixed;
+    overflow:hidden;
+    margin-top:3vh;
+}
+#MODE p0{
+    font-size: 15px;
+    font-family: "Hasteristico";
+    letter-spacing:0.15vw;
+    color:var(--n);
+    transition:all 0.25s ease-in-out;
+}
+#MODE p0 a:hover{
+    color:var(--m);
+}
+#mode1, #mode2{
+    color:var(--n);
+}
+#mode1 a, #mode2 a{
+    cursor:pointer;
+    text-decoration:none;
+}
+/**************************LOGO MENU *****************************/
+#logomenu{
+    width:8vw;
+    height:7vh;
+    margin-top:1vh;
+    margin-left:3vw;
+    margin-right:45vw;
+    background-image: url(images/Illu/Logo\ Spiteful\ Final.png.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#logomenu img{
+    width:80px;
+    height:93.5px;
+}
+/***************************** RECHERCHE **************************/
+.barrech{
+    width:20vw;
+    height:3vh;
+    display:flex;
+    margin-top:3vh;
+    position:fixed;
+}
+#barre{
+    width:15vw;
+    height:5vw;
+    margin-top:1vw;
+    background:none;
+    border:none;
+    border-bottom:1px var(--n) solid;
+}
+#button{
+    width:2vw;
+    height:3vh;
+    cursor:pointer;
+    background:none;
+    border:none;
+    background-image:url(images/Illu/Loupe_N.png.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+/******************************MENU BURGER**************************/
+#burgerbout{
+    width: 2vw;
+    height:3vh;
+    cursor:pointer;
+    position:fixed;
+    margin-top:3vh;
+    display:flex;
+    margin-left:2vw;
+    flex-direction:column;
+}
+.bar{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: var(--n);
+    margin-bottom:0.6vh;
+    margin-left:0.6vw;
+}
+.bar2{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: var(--n);
+    margin-left:0.3vw;
+    margin-bottom:0.6vh;
+}
+.bar3{
+    position:var(--pr);
+    height:0.4vh;
+    width:1.5vw;
+    background-color: var(--n);
+}
+
+/**********************************MENU **********************************/
+
+.Menu{
+    left:-50vw;
+    width:600px;
+    height:600px;
+    text-align:center;
+    margin-top:15vh;
+    position:var(--pr);
+    transform: rotate(90);
+    overflow:hidden;
+    z-index:10000;
+    transition: 1s;
+    background-image: url(images/Illu/MENU.png.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:var(--bl);
+}
+
+.open{
+    left: 0;
+    opacity: 1;
+}
+h4{
+    font-size:60px;
+    color:var(--o);
+    margin-top:17vh;
+    margin-left:-13vw;
+    font-family: "HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+#options{
+    margin-left:-13vw;
+    transition:all 0.25s ease-in-out;
+}
+#options a{
+    color:var(--n);
+    text-decoration: none;
+    font-family: "HasteristicoBOLD";
+    font-size:20px;
+    letter-spacing:0.1vw;
+}
+#options a:hover{
+    color:var(--m);
+}
+
+/*******************************CHGT LANGUE*******************************/
+.langue{
+    width:5vw;
+    height:5vh;
+    font-size: 15px;
+    font-family: "Hasteristico";
+    color:var(--n);
+    cursor:pointer;
+    text-decoration: none;
+    position:fixed;
+    margin-top:3vh;
+    margin-left:2vw;
+    letter-spacing:0.1vw;
+    transition:all 0.25s ease-in-out;
+}
+.langue a:hover{
+    color:var(--m);
+}
+/******************BLOC TEXT*************/
+.bloctext{
+    position:var(--pr);
+    width:50%;
+    height:var(--h);
+    margin-left:3vw;
+    overflow:hidden;
+}
+.bloctext2{
+    position:var(--pr);
+    width:40vw;
+    height:var(--h);
+    margin-left:3vw;
+}
+.bloctext3{
+    position:var(--pr);
+    width:60vw;
+    height:var(--h);
+}
+.bloctext21{
+    position:var(--pr);
+    width:40vw;
+    height:var(--h);
+}
+.bloctext31{
+    position:var(--pr);
+    width:60vw;
+    height:var(--h);
+    margin-left:3vw;
+}
+/*************************SLIDE ACCUEIL***************************/
+#slideAcc{
+    position:var(--pr);
+    width:var(--w);
+    height:92vh;
+    display: flex;
+    overflow:hidden;
+    margin-top: -60vh;
+}
+.textacc{
+    width:44vw;
+    font-family:"Cabrion - Light";
+    text-align: justify;
+    margin-top:28vh;
+    text-decoration: none;
+}
+p1{
+    font-family: 'Cabrion - Light';
+    font-size:18px;
+    color:black;
+}
+p11, p12{
+    font-size:19px;
+    font-family:'Cabrion - Light';
+}
+P11{
+    color:var(--n);
+}
+P12{
+    color:var(--o);
+}
+.bloctext h1{
+    font-family:"theboldfont";
+    font-size:275px;
+    color:var(--m);
+    opacity:30%;
+    margin-top:45vh;
+    margin-left:3.5vw;
+    letter-spacing:1.5vw;
+}
+#mambaV{
+    width:65vw; 
+    height:65vh; 
+    position:var(--pa);
+    background-image:url(images/PNG/Green_Mamba.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: contain;
+    top:4vh;
+    z-index:1;
+}
+.numpage{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:73vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage p{
+    font-size:12px;
+}
+.barrescroll{
+    width:1vw;
+    position:var(--pa);
+    top:-50vh;
+    left:25vw;
+    transform:rotate(90deg);
+    top:85vh;
+    left:95vw;
+    z-index: 10000000000;
+}
+#barre{
+    width:20vw;
+    height:0.4vh;
+    background:var(--n);
+}
+#barre p{
+    color:var(--n);
+    font-family: "HasteristicoBOLD";
+    font-size:12px;
+    letter-spacing: 0.1vw;
+}
+/************************** SLIDE HISTOIRE ****************************/
+#slideHist{
+    width:var(--w);
+    height:var(--h);
+    display: flex;
+    overflow:hidden;
+    position:var(--pr);
+}
+#scient1 img{
+    width:20vw;
+    height:30vw;
+    margin-top:15vh;
+}
+#slideHist h2{
+    color:var(--n);
+    opacity:55%;
+    font-family:"theboldfont";
+    transform:rotate(-90deg);
+    margin-top:-75vh;
+    margin-left:-12vw;
+    overflow:hidden;
+    font-size:80px;
+}
+.textsci{
+    width:50vw;
+    height:15vh;
+    display:flex;
+    position:var(--pr);
+    margin-top:60vh;
+}
+.blocsci{
+    width:50vw;
+    height:10vh;
+    padding-top:7vh;
+    margin-right:3vw;
+}
+p2{
+    font-family: 'Hasteristico';
+    font-size:25px;
+    color:var(--n);
+    margin-left:1vw;
+    letter-spacing:0.1vw;
+}
+p21{
+    font-family:'HasteristicoBOLD';
+    font-size:32px;
+    color:var(--n);
+    margin-left:1vw;
+    letter-spacing:0.1vw;
+}
+p22{
+    font-family:'Cabrion - Light';
+    font-size:20px; 
+    color:var(--bl);
+}
+.text{
+    width:15vw;
+    height:15vh;
+    margin-top:5vh;
+    margin-left:1.5vw;
+    text-align:justify;
+}
+#slideHist .bloctext .blocsci h3{
+    color:var(--n);
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+#slideHist .bloctext .blocsci p{
+    font-family: "Hasteristico";
+    letter-spacing:0.1vw;
+}
+.bloctextsci{
+    width:30vw;
+    height:40vh;
+    background-color:var(--m);
+    margin-top:-25vh;
+    margin-left:-10vw;
+    overflow:hidden;
+}
+#slideHist .bloctext .bloctextsci p{
+    font-family: "Cabrion - Light";
+    margin-left:315vw;
+    margin-top:-5vh;
+}
+.numpagesci{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:10vw;
+    color:var(--m);
+    font-family:"Hasteristico";
+    letter-spacing:0.1vw;
+    font-size:22px;
+}
+#texthist{
+    width:35vw;
+    height:20vh;
+    font-size:25px;
+    font-family:"Cabrion - Light";
+    text-align: justify;
+    margin-top:35vh;
+    margin-left:5vw;
+    text-decoration: none;
+}
+.numpage2{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:91vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage2 p{
+    font-size:12px;
+}
+#barresci{
+    width:50vw;
+    height:0.4vh;
+    background:var(--m);
+}
+#span{
+    width:10vw;
+    height:3vh;
+    margin-top:5vh;
+    line-height:200%;
+}
+/************************ SLIDE PRODUITS **********************************/
+#slideProd{
+    position:var(--pr);
+    width:var(--w);
+    height:200vh;
+    display: flex;
+    overflow:hidden;
+}
+.numpage3{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:191vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage3 p{
+    font-size:12px;
+}
+.blocmedoc{
+    width:30vw;
+    height:180vh;
+    background-color:var(--n);
+    margin-top:7vh;
+    overflow:hidden;
+}
+.blocmedoc p39{
+    font-family: "HasteristicoBOLD";
+    color:var(--bl);
+    padding-top:10vh;
+    padding-left:5vw;
+    letter-spacing:0.2vw;
+    font-size:40px;
+}
+.blocexpmedoc{
+    width:30vw;
+    height:40vh;
+    display:flex;
+    margin-top:2vh;
+    margin-left:-4vw;
+}
+.blocexpmedoc p3{
+    width:20vw;
+    height:8vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+    color:var(--m);
+    font-size:50px;
+    transform:rotate(-90deg);
+    text-align: center;
+    margin-top:7vh;
+    margin-left:1vw;
+}
+.exp{
+    width:35vw;
+    height: 20vh;
+    text-align: justify;
+    margin-left:-4vw;
+    margin-top:5vh;
+    line-height:4vh;
+}
+p31{
+    font-family: "Simple Print";
+    font-size:60px;
+    color:var(--bl);
+}
+p32{
+    font-family: "Simple Print";
+    font-size:50px;
+    color:var(--bl);
+}
+p33{
+    font-family: "Simple Print";
+    font-size:70px;
+    color:var(--o);
+    margin-left:2vw;
+}
+.numpageprod{
+    font-family:"Hasteristico";
+    color:var(--bl);
+    font-size:15px;
+    letter-spacing: 0.1vw;
+    margin-top:2vh;
+    text-align:center;
+}
+#mianim img{
+    width:50vw;
+    height:63vh;
+    margin-top:76vh;
+    margin-left:-13vw;
+    position:var(--pa);
+}
+#barprod{
+    width:65vw;
+    height:0.4vh;
+    background-color: var(--n);
+    margin-top:2vh;
+    margin-left:-20vw;
+}
+#Produit{
+    width:50vw; 
+    height:90vh; 
+    position:var(--pa);
+    top:5vh;
+    margin-left:10vw;
+}
+#Produit img{
+    width:22vw;
+    height:54vh;
+    margin-top:5vh;
+    margin-left:22vw;
+}
+#Produit p35{
+    font-family: "theboldfont";
+    font-size:180px;
+    color:var(--n);
+    opacity:30%;
+}
+#blocmambav{
+    width:15vw;
+    height:23vw;
+    background-color:var(--v);
+    position:var(--pa);
+    margin-top:141%;
+    margin-left:40vw;
+}
+.textanim{
+    width:15vw;
+    height:8vh;
+    margin-top:4vh;
+    text-align:justify;
+}
+#blocmambav p36{
+    font-family: "HasteristicoBOLD";
+    font-size:25px;
+    color:var(--n);
+    margin-left:2vw;
+    margin-bottom:0.5vh;
+    letter-spacing:0.1vw;
+}
+#blocmambav p37{
+    font-family: "Hasteristico";
+    font-size:16px;
+    color:var(--n);
+    margin-left:2vw;
+    margin-top:1vh;
+    margin-bottom:1.3vh;
+    letter-spacing: 0.1vw;
+}
+.anim{
+    margin-top:169%;
+    margin-left:5vw;
+}
+.baranim{
+    width:50vw;
+    height:0.4vh;
+    background-color:var(--v);
+}
+p38{
+    font-family:'theboldfont';
+    font-size:100px;
+    color:var(--n);
+    opacity:40%;
+}
+/*************CAROUSEL*************************/
+.mySlides {
+    display: none
+}
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width:30vw;
+    height:40vh;
+    display:flex;
+    margin-top:2vh;
+    margin-left:-4vw;
+}
+
+/* The dots/bullets/indicators */
+#ensemdot{
+    transform:rotate(90deg);
+    margin-left:25vw;
+    margin-top:82vh;
+    background-color:var(--o);
+}
+#ensemdotmed{
+    margin: top 5vh;
+    transform:rotate(90deg);
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color:var(--m);
+  opacity:50%;
+  border-radius: 50%;
+  display: inline-block;
+  transition:0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--o);
+  opacity:100%;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*************************** SLIDE ANIMAL **********************/
+#slideAni{
+    width:var(--w);
+    height:var(--h);
+    overflow:hidden;
+    display:flex;
+    position:var(--pr);
+}
+.numpage4{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:90vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage4 p{
+    font-size:12px;
+}
+.blocanim{
+    width:50vw;
+    height:55vh;
+    margin-top:5vh;
+    display:flex;
+    overflow:hidden;
+}
+#Mambavert, #Cubomeduse,
+#Araignee, #Palythoa,
+#Mambanoir, #Conus{
+    width:5vw;
+    height:55vh;
+    margin-right:0.5vw;
+    overflow:hidden;
+    filter:grayscale(100%);
+    cursor:pointer;
+}
+#Mambavert:hover, #Cubomeduse:hover,
+#Araignee:hover, #Palythoa:hover,
+#Mambanoir:hover, #Conus:hover{
+    filter:grayscale(0%);
+    transition:ease-in-out 0.3s all;
+}
+#Mambavert img,
+#Araignee img,
+#Mambanoir img{
+    display:block;
+    margin-left:-24vw;
+    width:50vw;
+    height:56vh;
+}
+#Palythoa img{
+    display:block;
+    margin-left:-22vw;
+    width:50vw;
+    height:60vh;
+    margin-top:-2vh;
+}
+#Cubomeduse img{
+    display:block;
+    margin-left:-17vw;
+    width:50vw;
+    height:56vh;
+}
+#Conus img{
+    display:block;
+    margin-left:-7vw;
+    width:20vw;
+    height:56vh;
+}
+h6{
+    font-family: "theboldfont";
+    color:var(--m);
+    font-size:40px;
+    margin-top:8vh;
+}
+h5{
+    font-family: "theboldfont";
+    color:var(--m);
+    font-size:40px;
+}
+.blocvidanim1{
+    width:30vw;
+    height:55vh;
+    background-color:var(--n);
+    margin-top:22vh;
+    overflow:hidden;
+}
+#vidmambav{
+    margin-top:3vh;
+    margin-left:2.5vw;
+}
+#vidmambav p4{
+    font-family: "HasteristicoBOLD";
+    font-size:30px;
+    color:var(--bl);
+    letter-spacing:0.1vw;
+}
+#vidmambav video{
+    width:25vw;
+    height:26vh;
+    margin-top:5vh;
+}
+/************************** SLIDE VIDEOS ************************/
+#slideVid{
+    width:var(--w);
+    height:var(--h);
+    overflow:hidden;
+    position:var(--pr);
+}
+.video{
+    width:var(--w);
+    height:50vh;
+    display:flex;
+    margin-top:25vh;
+}
+#vid1 video{
+    width:35vw;
+    height:40vh;
+    margin-top:5vh;
+    margin-left:3vw;
+    margin-right:5vw;
+}
+#vid2 video, #vid3 video{
+    width:20vw;
+    height:40vh;
+    margin-top:5vh;
+    filter:blur(50%);
+}
+#vid3 video{
+    margin-left:5vw;
+}
+.numpagevid{
+    line-height:2vh;
+}
+.numpagevid p5{
+    font-family:"HasteristicoBOLD";
+    color:var(--m);
+    font-size:20px;
+    letter-spacing: 0.1vw;
+    margin-top:5vh;
+    margin-left:3vw;
+}
+.numpagevid p51{
+    font-family:"Hasteristico";
+    color:var(--m);
+    font-size:17px;
+    letter-spacing: 0.1vw;
+    margin-top:5vh;
+}
+.numpage5{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:90vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage5 p{
+    font-size:12px;
+}
+/******************************* SLIDE CONTACT ********************/
+#slideCont{
+    width:var(--w);
+    height:97vh;
+    position:var(--pr);
+    display:flex;
+    overflow:hidden;
+}
+.numpage6{
+    position:var(--pa);
+    padding-top:1vh;
+    padding-bottom: 1vh;
+    width:7vw;
+    color:var(--o);
+    transform:rotate(-90deg);
+    top:87vh;
+    font-family:"HasteristicoBOLD";
+    letter-spacing:0.1vw;
+}
+.numpage6 p{
+    font-size:12px;
+}
+#FORM, #infos{
+    width:100vw;
+    height:var(--h);
+    display:flex;
+}
+#INFOR{
+    margin-top:20vh;
+}
+p6{
+    font-family:"HasteristicoBOLD";
+    font-size:45px;
+    color:var(--n);
+    margin-top:1vh;
+    letter-spacing: 0.1vw;;
+}
+p62{
+    font-family:"HasteristicoBOLD";
+    font-size:18px;
+    color:var(--n);
+    letter-spacing:0.1vw;
+}
+p63{
+    font-family:"Hasteristico";
+    font-size:15px;
+    color:var(--n);
+    margin-left:1vw;
+    letter-spacing:0.1vw;
+}
+#adresse{
+    width:15vw;
+    height:25vh;
+    margin-right:5vw;
+}
+#barrecont{
+    width:44vw;
+    height:0.4vh;
+    background:var(--o);
+    margin-top:20vh;
+}
+#formulaire{
+    width:22vw;
+    height:50vh;
+    background-color: var(--n);
+    text-align:justify;
+    margin-left:13.5vw;
+}
+#formulaire p61{
+    font-family:"Simple Print";
+    font-size:45px;
+    color:var(--o);
+    padding-top:2vh;
+    padding-left:3vw;
+}
+#formulaire form{
+    width:25vw;
+    height:25vh;
+    margin-top:3vh;
+    margin-left:2vw;
+}
+#formulaire form .textform{
+    font-family: "Simple Print";
+    font-size:36px;
+    color:var(--bl);
+    border-right:solid 1px var(--bl);
+    border-bottom:solid 1px var(--bl);
+    letter-spacing:0.2vw;
+}
+form #name, #surname, #mail, #mess{
+    background:none;
+    border:none;
+    color:var(--bl);
+    font-size:25px;
+    font-family:"Simple Print";
+    opacity:60%;
+    margin-left:0.5vw;
+    letter-spacing: 0.2vw;
+    border-bottom:solid var(--bl) 1px;
+}
+#boutenv{
+    background:none;
+    border:none;
+    font-family: "Simple Print";
+    color:var(--bl);
+    font-size:40px;
+    letter-spacing:0.2vw;
+    margin-top:2vw;
+}
+#boutenv:hover{
+    transition: all 0.25s ease-in-out;
+    color:var(--o);
+}
+/*****************************FOOTER*************************/
+footer{
+    width:var(--w);
+    height:3vh;
+    text-align:center;
+    overflow:hidden;
+}
+footer p_footer{
+    font-family:"Cabrion - Light";
+    font-size:14px;
+    color:var(--n);
+    margin-bottom:-1.5vh;
+    margin-left:2vw;
+
+}
+p_footer a{
+    color:var(--n);
+    text-decoration: none;
+}
+p_footer a:hover{
+    color:#62d600;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/******************************MEDIA QUERIES*******************************/
+@media all AND (max-width:1024px)/***IPAD HOR***/
+{
+    /*****NAV*****/
+
+  nav ul{
+      margin-left:15vw;
+  }
+  nav ul li{
+      width:5vw;
+  }
+  #MODE{
+    width:15vw;
+    margin-top:1.5vh;
+  }
+  #MODE p0{
+    font-size:16px;
+  }
+  #logomenu{
+      width:8vw;
+      margin-top:1.5vh;
+  }
+  .barrech{
+    width:13vw;
+    height:4vh;
+    margin-top:1.5vh;
+  }
+  #barre{
+    width:10vw;
+    margin-top:3vh;
+    border-bottom:none;
+  }
+  #button{
+      width:2.3vw;
+      height:3.3vh;
+      margin-top:0.2vh;
+  }
+  #button img{
+      width:2.3vw;
+      height:3.3vh;
+  }
+  #burgerbout{
+      margin-top:2.5vh;
+      height:4vh;
+      width:4vw;
+  }
+  .langue{
+      font-size:16px;
+      margin-top:1.5vh;
+  }
+  /***MENU***/
+  .Menu{
+      width:400px;
+      height:400px;
+      margin-left:0vw;
+      margin-top:8vh;
+  }
+  h4{
+      font-size:40px;
+  }
+  #options a{
+      font-size:14px;
+  }
+  
+  /***SLIDE ACCUEIL**/
+  #slideAcc{
+      height:92vh;
+  }
+  .bloctext h1{
+      font-size:145px;
+      margin-top:53vh;
+      margin-left:4vw;
+  }
+  #mambaV{
+      width:55vw;
+      height:55vh;
+      margin-left:5vw;
+      top:12vh;
+  }
+  .numpage{
+      width:11vw;
+      top:82.5vh;
+      margin-left:-2vw;
+  }
+  /***SLIDE HIST***/
+  #slideHist h2{
+      font-size:60px;
+      margin-top:-57vh;
+      margin-left:-8vw;
+  }
+  #scient1 img{
+      padding-top:17vh;
+  }
+  .textsci{
+      margin-top:43vh;
+  }
+  P2{
+      font-size:20px;
+  }
+  p21{
+      font-size:28px;
+  }
+  p22{
+      font-size:12px;
+  }
+  .numpage2{
+    width:11vw;
+    top:90.5vh;
+    margin-left:-2vw;
+  }
+  .numpagesci{
+      font-size:17px;
+  }
+  #texthist{
+      height:13vh;
+      font-size:20px;
+  }
+  /***SLIDE PRODUITS***/
+  #slideProd{
+      height:120vh;
+  }
+  .numpage3{
+    width:11vw;
+    top:105vh;
+    margin-left:-2vw;
+  }
+  .blocmedoc{
+      height:100vh;
+  }
+  .blocmedoc p39{
+      font-size:30px;
+  }
+  .blocmedoc p3{
+      font-size:30px;
+  }
+  P31{
+      font-size:24px;
+  }
+  p32{
+      font-size:21px;
+  }
+  p33{
+      font-size:33px;
+  }
+  #medocimganim img{
+      width:45vw;
+      height:50vh;
+      margin-left:-1vw;
+  }
+  #mianim img{
+      width:35vw;
+      height:37.8vh;
+      margin-top:20vh;
+      margin-left:0vw;
+  }
+  #Produit img{
+      width:18vw;
+      height:44vh;
+      margin-left:25vw;
+  }
+  #Produit p35{
+      font-size:50px;
+  }
+  #blocmambav{
+      margin-top:76.5vh;
+      width:18vw;
+      margin-left:37vw;
+  }
+  .textanim{
+      margin-top:2vh;
+  }
+  #blocmambav p36{
+      font-size:13.6px;
+  }
+  #blocmambav p37{
+      font-size:10px;
+  }
+  .anim{
+      margin-top:99vh;
+  }
+  p38{
+      font-size:45px;
+  }
+  /****SLIDE ANIM****/
+  .blocanim{
+      margin-top:10vh;
+  }
+  h6{
+      margin-top:10vh;
+  }
+  #Mambavert, #Cubomeduse,
+  #Araignee, #Palythoa,
+  #Mambanoir, #Conus{
+    width:5vw;
+    height:45vh;
+    margin-right:0.5vw;
+  }
+  .numpage4{
+      width:8vw;
+      padding-bottom:4vw;
+  }
+  .blocvidanim1{
+    width:40vw;
+    height:45vh;
+    margin-top:32vh;
+    margin-left:-6vw;;
+  }
+  /****SLIDE VIDEO***/
+  .numpage5{
+      width:8vw;
+      padding-bottom:3vh;
+  }
+  /****SLIDE CONTACT***/
+  .numpage6{
+      width:8vw;
+  }
+  p6{
+      font-size:35px;
+  }
+  p62{
+      font-size:14px;
+  }
+  p63{
+      font-size:11px;
+  }
+  #formulaire{
+      margin-left:5vw;
+      width:26.8vw;
+  }
+  /***NAV***/
+  footer p_footer{
+      height:6vh;
+      font-size:10px;
+      margin-left:1vw;
+  }
+}
+@media all AND (max-width:375px)/***IPHONE X vert***/
+{
+/***NAV***/
+nav ul{
+    margin-left:10vw;
+}
+nav ul li{
+    width:5vw;
+}
+#MODE p0{
+    font-size: 8px;
+    font-family: "HasteristicoBOLD";
+}
+}
+@media all AND (max-width:812px)/***IPHONE X hori***/
+{
+
+}
