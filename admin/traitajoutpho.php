@@ -11,33 +11,44 @@
     $err=0;
     if(isset($_POST['nompho']))
     {
-        if($_POST['nompho']=='')
+        if(empty($_POST['nompho']))
         {
-            $err=6;
+            $err=1;
         }
         else
         {
             $nompho=htmlspecialchars($_POST['nompho']);
         }
-        if($_POST['slidepho']=='')
+
+        if(empty($_POST['slidepho']))
         {
-            $err=7;
+            $err=2;
         }
         else
         {
             $slidepho=htmlspecialchars($_POST['slidepho']);
         }
-        if($_POST['image']=='')
-        {
-            $err=8;
-        }
-        else
-        {
-            $image=htmlspecialchars($_POST['image']);
-        }
+        
 
-        if($err==0)
+        if($err===0)
         {
+            $dossier = "../images/";
+            $fichier = basename($_FILES["image"]["name"]);
+            $tailleMax = 200000;
+            $taille = filesize($_FILES['image']['tmp_name']);
+            $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
+            $extension = strrchr($_FILES['image']['name'],'.');
+
+            if(!in_array($extension, $extensions))
+            {
+                $fileError = "wrong-extension";
+            }
+
+            if($taille > $tailleMax)
+            {
+                $fileError = "size";
+            }
+
             $insert=$bdd->prepare("INSERT INTO photos(nompho,slidepho,image) VALUES (:np,:sp,:img)");
             $insert->execute(array(
                 "np"=>$nompho,

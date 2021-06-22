@@ -22,6 +22,7 @@ html , body{
     --b:#92eaff;
     --r:#ff35c5;
     --j:#ffeb00;
+    --bl:#ffffff;
 }
 @font-face{
     font-family: "theboldfont";
@@ -169,11 +170,12 @@ nav{
 }
 /******************************MENU*************************/
 .Menu{
+    left:-50vw;
     width:600PX;
     height:600px;
     text-align:center;
     margin-top:15vh;
-    position:var(--pr);
+    position:fixed;
     transform: rotate(90);
     overflow:hidden;
     z-index:10000;
@@ -181,12 +183,12 @@ nav{
     background-image: url(../images/Illu/MENU.png.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-color:white;
+    background-color:var(--bl);
 }
-/*.open{
+.open{
     left: 0;
     opacity: 1;
-}*/
+}
 h4{
     font-size:60px;
     color:var(--o);
@@ -226,7 +228,7 @@ h4{
 #mambav{
     width:50vw;
     height:50vh;
-    background-image:url(../images/PNG/Green\ Mamba\ ret.png);
+    background-image:url(../images/PNG/Green_Mamba_ret.png);
     background-size:contain;
     background-repeat: no-repeat;
     margin-top:25vh;
@@ -247,7 +249,7 @@ h2{
 
 /**************************ADMINISTRATION CHOIX***********************/
 #PHOTOS{
-    width:30vw;
+    min-width:30vw;
     height:90vh;
     position:var(--pr);
     margin-top:28vh;
@@ -255,7 +257,7 @@ h2{
 }
 .photos{
     width:60vw;
-    height:5h;
+    height:5vh;
     display:flex;
     position:var(--pr);
     margin-bottom:0.5vh;
@@ -271,6 +273,7 @@ h2{
 .photo img{
     width:10vw;
     height:4vh;
+    object-fit: scale-down;
 }
 /***************BlocVid****************/
 #blocvid{
@@ -290,7 +293,7 @@ h2{
 #meduse{
     width:70vw;
     height:70vh;
-    background-image:url(../images/PNG/Chironex\ Flexkeri.png);
+    background-image:url(../images/PNG/Chironex_Fleckeri.png);
     background-size:contain;
     background-repeat: no-repeat;
     margin-top:25vh;
@@ -299,15 +302,15 @@ h2{
 }
 .videos{
     width:60vw;
-    height:5h;
+    height:5vh;
     display:flex;
     position:var(--pr);
     margin-bottom:0.5vh;
+    overflow:hidden;
 }
-.video{
+.videos video{
     width:10vw;
     height:4vh;
-    background-color:#2D2A2A;
 }
 #titreV{
     width:23vw;
@@ -403,6 +406,27 @@ h2{
     }
     #options a{
         font-size:14px;
+    }
+    /******BlocAdmin*******/
+    #mambav{
+        width:40vw;
+        height:40vh;
+    }
+    #titreP{
+        margin-left:15vw;
+    }
+    h2{
+        font-size:100px;
+    }
+    .slide, .nom, .photo{
+        font-size:15px;
+    }
+    #titreV{
+        margin-top:-60vh;
+    }
+    #meduse{
+        width:60vw;
+        height:60vh;
     }
 
 }

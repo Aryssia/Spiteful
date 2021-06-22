@@ -24,8 +24,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stylems.css"/>
-
+    <link rel="stylesheet" type="text/css" href="stylemsa.css"/>
+    <link rel="icon" href="../images/Illu/Logo Spiteful Final.png.png"/>
     <title>Modifier</title>
     <link rel="icon" href="../images/Illu/Logo Spiteful Final.png">
 </head>
@@ -33,7 +33,7 @@
 
     <div id="bloc">
     <div id="titre">
-        <h1><a href="modifier.php">Modifier</a></h1><br/>
+        <h1><a href="mod.php">Modifier</a></h1><br/>
         <h2><a href="ajouter.php">Ajouter</a></h2>
     </div>
 
@@ -74,12 +74,38 @@
         
         ?>
         
-
-        <div id="anim1"></div>
+        <div class="slideshow-container-anim'">
+        <div id="anim1" class="mySlide fade">
+            <?php
+            $reqimg=$bdd->query("SELECT image FROM photos LIMIT 6 OFFSET 6");
+            while($donimg=$reqimg->fetch())
+            {
+                echo'
+                <img src="../images/Illu/'.$donimg['image'].'">
+                ';
+            }
+            ?>
+            
+        </div>   
         </div>
+        </div>
+        
 
         <div class="bloctext">
-            <div id="anim2"></div>
+            <div class="slideshow-container-anim'">
+            <div id="anim2" class="mySlide fade">
+                <?php
+                $reqimg=$bdd->query("SELECT image FROM photos LIMIT 6 OFFSET 6");
+                while($donimg=$reqimg->fetch())
+                {
+                    echo'
+                    <img src="../images/Illu/'.$donimg['image'].'">
+                    ';
+                }
+                ?>
+                
+            </div>   
+            </div>
             <div id="titreV"><h3>VIDEOS</h3></div>
 
         <form method="POST" action=" ">

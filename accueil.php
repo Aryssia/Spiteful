@@ -10,6 +10,7 @@
             else{
                 setcookie('mode','sombre', time() + 365*24*3600, null, null, false, true);
             }
+            header("LOCATION:index.php");
         }
     
 
@@ -38,7 +39,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/Illu/Logo Spiteful Final.png.png"/>
     <link rel="stylesheet" type="text/css" href="css/sal.css"/>
-    <link rel="stylesheet" type="text/css" href="css/styleIPHONE.css"/>
     <title>Spiteful</title>
     <script src="JS/sal.js"></script>
 </head>
@@ -48,13 +48,6 @@
     
     <nav id="Menunav">
     <div id="logomenu"></div>
-    <div><form method="GET" action="search.php">
-                <div class="barrech" >
-                    <input type="search" id="barre" name="s" aria-label="Rechercher...">
-                    <button id="button"></button>
-                </div>
-            </form>
-    </div>
     <div>
         <ul>
             <li>
@@ -115,9 +108,6 @@
             <p><b>- 01 -</b>/ - 06 -</p>
         </div>
         
-        <div class="barrescroll">
-            <div id="barre"><p><b>SCROLL</b></p></div>
-        </div>
         
     </div>
     
@@ -148,18 +138,15 @@
             $reqsci->closeCursor();
            ?>
            <div id="barresci"></div>
-                <div class="numpagesci">
-                    <p23>- 01 -/ - 02 -</p23>
-                </div> 
                        
         </div>
 
         <div class="bloctext">
-            <div id="texthist" data-sal="fade-up" data-sal-delay="350" data-sal-duration="650">
-                <div ><p24>Les premières études sur les venins d'animaux ne sont pas
+            <div id="texthist">
+                <div><p>Les premières études sur les venins d'animaux ne sont pas
                 aussi récente qu'on le pense. Depuis le 18s, différents scientifiques
                   s'y sont intérréssé.              
-                </p24></div>    
+                </p></div>    
             </div>
             
         </div>
@@ -172,117 +159,112 @@
     <div id="slideProd">
         <div class="bloctext2">
             <div class="blocmedoc">
-            <?php
-            $reqmed=$bdd->prepare("SELECT * FROM medocs");
-            $reqmed->execute(array());
-            while($donmed=$reqmed->fetch());
-            {
-                echo'
-                <p39>MEDICAMENT</p39>
-                    <div class="blocexpmedoc">
-                        <p3>- 01 -</p3>
-                        <div class="exp">
-                        <p31>Composant du médicament</p31><br/>
-                        <p32>Pourcentage du peptide</p32><P33>9%</p33><br/>
-                        <p32>Cardio-vasculaire</p32>
+                <?php
+                $reqmedoc=$bdd->query("SELECT * FROM medocs");
+                while($donmedoc=$reqmedoc->fetch())
+                {
+                    echo'
+                        <h6>'.$donmedoc["nomedoc"].'</h6><br/>
+                        <div class="blocexpmedoc">
+                            <p3>'.$donmedoc["numero"].'</p3>
+                            <div class="exp">
+                            <p31>Composant du médicament</p31><br/>
+                            <p32>Pourcentage du peptide</p32><P33>'.$donmedoc["pourc"].'</p33><br/>
+                            <p32>'.$donmedoc["maladie"].'</p32>
 
-                            <div class="numpageprod">
-                                <p><b>- 01 -</b>/- 06 -</p>
+                                <div class="numpageprod">
+                                    <p><b>'.$donmedoc["numero"].'</b>/- 06 -</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ';
+                    ';
 
-            }
-            $reqmed->closeCursor();
-            ?>
+                }
+                $reqmedoc->closeCursor();
+                ?>
             
-            <div class="slideshow-container">
-                    <?php
-                    $reqanim=$bdd->query("SELECT image FROM photos");
-                    while($donanim=$reqanim->fetch())
-                    {
-                        echo'
-                        <div class="mySlides fade">
-                        <div id="mianim"><img src="images/PNG/'.$donanim['image'].'"></div>
-                        </div>
-                        ';
-                    }
-                    $reqanim->closeCursor();
-                    ?>
-                    <div id="ensemdot" style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span> 
-                        <span class="dot" onclick="currentSlide(2)"></span> 
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span> 
-                        <span class="dot" onclick="currentSlide(5)"></span> 
-                        <span class="dot" onclick="currentSlide(6)"></span>  
-                    </div>
+                <div class="slideshow-container">
+                            <?php
+                            $reqanim=$bdd->query("SELECT image FROM photos");
+                            while($donanim=$reqanim->fetch())
+                            {
+                                echo'
+                                <div class="mySlides fade">
+                                <div id="mianim"><img src="images/PNG/'.$donanim['image'].'"></div>
+                                </div>
+                                ';
+                            }
+                            $reqanim->closeCursor();
+                            ?>
+                        
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span> 
+                                <span class="dot" onclick="currentSlide(2)"></span> 
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot" onclick="currentSlide(4)"></span> 
+                                <span class="dot" onclick="currentSlide(5)"></span> 
+                                <span class="dot" onclick="currentSlide(6)"></span>  
+                            </div>
+                </div>
             </div>
-
-                
-
-
-            </div>
-
-            
-            </div>
+        </div>
         
         
         <div class="bloctext3">
             
+            <div class="slideshow-container2">
+            <div id="barprod"></div>
+                <?php
+                $reqmedoc2=$bdd->query("SELECT nomedoc, imagemed FROM medocs");
+                while($donmedoc2=$reqmedoc2->fetch())
+                {
+                    echo'
+                    <div id="Produit" class="mySlides2 fade">
+                        <img src="images/PNG/'.$donmedoc2["imagemed"].'"/><br/>
+                        <p35>'.$donmedoc2["nomedoc"].'</p35>
+                    </div>
+                    ';
+                }
+                $reqmedoc2->closeCursor();
+                ?>
 
-            <?php
-            $reqmedoc2=$bdd->query("SELECT nomedoc, imagemed FROM medocs");
-            while($donmedoc2=$reqmedoc2->fetch())
-            {
-                echo'
-                <div id="Produit">
-                    <div id="barprod"></div>
-                    <img src="images/PNG/'.$donmedoc2["imagemed"].'"/><br/>
-                    <p35>'.$donmedoc2["nomedoc"].'</p35>
-                </div>
-                ';
-            }
-            $reqmedoc2->closeCursor();
-            ?>
-            
-            <?php
-            $reqanim=$bdd->query("SELECT * FROM animaux");
-            while($donanim=$reqanim->fetch())
-            {
-                echo'
-                <div id="blocmambav">
-                <div class="textanim">
-                    <p36>NOM:</p36><br/>
-                    <p37>'.$donanim['nomanim_1'].'</p37><br/>
-                    <p37>'.$donanim['nomanim_2'].'</p37>
-                </div>
-
-                <div class="textanim">
-                    <p36>HABITAT:</p36><br/>
-                    <p37>'.$donanim['habitat_1'].'</p37><br/>
-                    <p37>'.$donanim['habitat_2'].'</p37></p37>
-                </div>
-
-                <div class="textanim">
-                    <p36>GUERISON:</p36><br/>
-                    <p37>'.$donanim['peptide'].'</p37><br/>
-                    <p37>'.$donanim['probleme'].'</p37>
-                </div>
-                </div>
-                
-                ';
-            }
-            $reqanim->closeCursor();
-            
-            ?>
-            
-            
-            <div class="anim">
-                <p38>MAMBA VERT</p38>
-                <div class="baranim"></div>
             </div>
+
+            <?php
+                $reqanim=$bdd->query("SELECT * FROM animaux");
+                while($donanim=$reqanim->fetch())
+                {
+                    echo'
+                    <div id="blocmambav">
+                    <div class="textanim">
+                        <p36>NOM:</p36><br/>
+                        <p37></p37><br/>
+                        <p37>'.$donanim['nomanim_2'].'</p37>
+                    </div>
+
+                    <div class="textanim">
+                        <p36>HABITAT:</p36><br/>
+                        <p37>'.$donanim['habitat_1'].'</p37><br/>
+                        <p37>'.$donanim['habitat_2'].'</p37></p37>
+                    </div>
+
+                    <div class="textanim">
+                        <p36>GUERISON:</p36><br/>
+                        <p37>'.$donanim['peptide'].'</p37><br/>
+                        <p37>'.$donanim['probleme'].'</p37>
+                    </div>
+                    </div>
+
+                    <div class="anim">
+                        <p38>'.$donanim['nomanim_1'].'</p38>
+                        <div class="baranim"></div>
+                    </div>
+                    
+                    ';
+                }
+                $reqanim->closeCursor();
+                ?>    
+                
         </div>
 
         <div class="numpage3">
@@ -309,8 +291,8 @@
             <div class="blocvidanim1" class="vidmambav">
                 <div id="vidmambav" >
                     <p4>Mamba Vert</p4>
-                    <video controls>
-                        <source src="vidéos/LOGO FI.mp4" type="video/mp4">
+                    <video controls poster="images/JPEG/PS.jpg">
+                        <source src="vidéos/FR/Charte graphique.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -324,32 +306,26 @@
     <div id="slideVid">
         <div class="video">
             <div id="vid1">
-                <video controls>
-                    <source src="vidéos/FR/Charte graphique.mp4" type="video/mp4">
-                </video>
-            </div>  
-            <div id="vid2">
-                <video controls>
+                <video controls poster="images/JPEG/PS.jpg">
                     <source src="vidéos/FR/Présentation SPITEFUL fr.mp4" type="video/mp4">
+                </video>
+            </div> 
+            <div id="vid2">
+                <video controls poster="images/JPEG/CGF.jpg">
+                    <source src="vidéos/FR/Charte graphique.mp4" type="video/mp4">
                 </video>
             </div>
             <div id="vid3">
-                <video controls>
+                <video controls poster="images/JPEG/PS.jpg">
                     <source src="vidéos/LOGO FI.mp4"/>
                 </video>
-
             </div>
         </div>
-
-            <div class="numpagevid">
-                <p5><b>- 01 -</b></p5><p51>/ - 02 -</p51>
-            </div>
-
+            
         <div class="numpage5">
             <p><b>- 05 -</b>/ - 06 -</p>
         </div>
     </div>
-
     <div id="slideCont">
         <div class="bloctext">
         <div id="INFOR">
@@ -382,8 +358,9 @@
                         <label class="textform" for="Nom">Nom:</label> <input type="text" id="name" name="nom" value="Durieu"><br/>
                         <label class="textform" for="Prenom">Prénom:</label> <input type="text" id="surname" name="prenom" value="Marie"><br/>
                         <label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" value="email@gmail"><br/>
-                        <label class="textform" for="Message">Message:</label><input type="text" id="mess" name="mess" value="Bonjour, je voudrais..."><br/>
-                        <input id="boutenv" type="submit" value="Envoyer">
+                        <label class="textform" for="Message">Message:</label><br/><br/>
+                        <input type="text" id="mess" name="mess"><br/>
+                        <a href="mail.php"><input id="boutenv" type="submit" value="Envoyer"></a>
                     </form>
                 </div>
             </div>
@@ -408,6 +385,8 @@
 
 <script src="JS/animation.js"></script>
 <script>
+
+/*****CAROUSEL ANIMAUX */
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -434,5 +413,46 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+
+
+
+/* récup du html */
+const slideHist = document.querySelector('#slideHist')
+const textHist = document.querySelector('#texthist')
+
+console.log(slideHist)
+console.log(textHist)
+
+var scrolling
+
+document.body.addEventListener('scroll',()=>{
+    scrolling= document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+   
+    if(scrolling < slideHist.offsetTop)
+    {
+        textHist.classList.remove('opa')
+    }else if(scrolling = slideHist.offsetTop)
+    {
+        textHist.classList.add('opa')
+    }else{
+        textHist.classList.remove('opa')
+    }
+    /*
+          if(scrolling < pres.offsetTop)
+                {
+                   
+                }else if((scrolling > pres.offsetTop) && (scrolling < contact.offsetTop))
+                {
+                   
+                }else if(scrolling >= contact.offsetTop)
+                {
+                  
+                }else{
+                   
+                }
+    */
+
+})
 </script>
 </html>

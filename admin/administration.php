@@ -61,16 +61,15 @@ if(isset($_GET['delvid']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styleadmin1.css"/>
+    <link rel="icon" href="../images/Illu/Logo Spiteful Final.png.png"/>
+    <link rel="stylesheet" type="text/css" href="styleadmin.css"/>
+    <link rel="stylesheet" type="text/css" href="../styleIPHONEX.css"/>
 
-    <script src="../scripts/jquery-3.2.1.min.js"></script>
-    <script src="../scripts/jquery.inview.min.js"></script>
-    <script type="../JS/animation.js">
-    </script>
+    <script type="../JS/animation.js"></script>
 
     <title>Administration Spiteful</title>
-    <link rel="icon" href="../images/Illu/Logo Spiteful Final.png">
-    <link rel="stylesheet" type="text/css" href="../styleIPHONEX.css"/>
+    
+    
 </head>
 <body>
     <nav>
@@ -158,15 +157,16 @@ if(isset($_GET['delvid']))
                             {
                                 echo'
                                 <div class="photos">
-                                    <div class="slide"><b>'.$donimg['slide'].'</b></div>
-                                    <div class="nom">'.$donimg['nom'].'</div>
-                                    <div class="photo"><img src="../images/JPEG/'.$donimg['photo'].'" alt="Mamba vert"></div>
-                                    <div class="modifier"><a href="modifier.php?id='.$donimg["id"].'">MODIFIER</a></div>
+                                    <div class="slide"><b>'.$donimg['slidepho'].'</b></div>
+                                    <div class="nom">'.$donimg['nompho'].'</div>
+                                    <div class="photo"><img src="../images/'.$donimg['dossier'].'/'.$donimg['image'].'" alt="Mamba vert"></div>
+                                    <div class="modifier"><a href="mod.php?id='.$donimg["id"].'">MODIFIER</a></div>
                                     <div class="supprimer"><a href="administration.php?id='.$donimg["id"].'&delimg=ok">SUPPRIMER</a></div>
                                 </div>
     
                                 ';
-                            }   
+                            }  
+                            $reqimg->closeCursor(); 
                     echo'</div>';
                 echo'</div>';
             echo'</div>';
@@ -181,13 +181,14 @@ if(isset($_GET['delvid']))
                         {
                             echo'
                             <div class="videos">
-                                <div class="slide"><b>'.$donvid["slide"].'</b></div>
-                                <div class="nom">'.$donvid["nom"].'</div>
-                                <div class="video"></div>
+                                <div class="slide"><b>'.$donvid["slidevid"].'</b></div>
+                                <div class="nom">'.$donvid["nomvid"].'</div>
+                                <div class="video"><video src="../vidéos/'.$donvid['dossier'].'/'.$donvid['video'].'" poster="../images/JPEG/PS.jpg"></video></div>
                                 <div class="modifier" ><a href="modifier.php?id='.$donvid["id"].'">MODIFIER</a></div>
                                 <div class="supprimer"><a href="administration.php?id='.$donvid["id"].'&delvid=ok">SUPPRIMER</a></div>
                             </div>';
                         }
+                        $reqvid->closeCursor();
                     echo'</div>';
                 echo'</div>';
         

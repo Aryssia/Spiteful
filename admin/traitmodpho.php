@@ -1,69 +1,89 @@
 <?php
     session_start();
-    
+
     if(!isset($_SESSION['admin']))
     {
         header("LOCATION:administration.php");
     }
 
-    include("connexion.php");
+    include('connexion.php');
 
-    if(!isset($_GET['id']))
-    {
-        header("LOCATION:administration.php?err=id");
-    }
-    else
-    {
-        $id=htmlspecialchars(($_GET['id']));
+
+    if(!isset($_GET['id'])){
+        header("LOCATION:mod.php");
     }
 
 
-    $err=0;
+    $id =htmlspecialchars($_GET['id']);
+    require "connexion.php";
+
+        $req = $bdd->prepare("SELECT * FROM photos WHERE id=?");
+        $req->execute(['id']);
+
+        /*TEST EXISTE BDD */
+        if(!$don = $req->fetch())
+        {
+            $req->closeCursor();
+            header("LOCATION:administration.php");
+        }
+        $req->closeCursor();
+
+    /*TEST FORMULAIRE */
     if(isset($_POST['nompho']))
     {
-       if($_POST['nompho']=='')
-       {
-            $err=9;
-       }
-       else
-       {
-           $nompho=htmlspecialchars($_POST['nompho']);
-       }
-       if($_POST['slidepho']=='')
-       {
-           $err=10;
-       }
-       else
-       {
-           $slidepho=htmlspecialchars($_POST['slidepho']);
-       }
-       if($_POST['image']=='')
-       {
-           $err=11;
-       }
-       else
-       {
-           $image=htmlspecialchars($POST['image']);
-       }
+        $error=0;
 
-       if($err==0)
-       {
-            $update=$bdd->prepare("UPDATE photos SET nompho=:np, slidepho=:sp, image=:img WHERE id=:id");
-            $update->execute(array(
+        if(empty($_POST['nompho']))
+        {
+            $error=1;
+        }
+        else{
+            $nompho = htmlspecialchars($_POST['nompho']);
+        }
+
+        if(empty($_POST['slidepho']))
+        {
+            $error=2;
+        }
+        else{
+            $nompho = htmlspecialchars($_POST['slidepho']);
+        }
+
+        if($err===0)
+        {
+            $dossier = "../images/";
+            $fichier = basename($_FILES["image"]["name"]);
+            $tailleMax = 200000;
+            $taille = filesize($_FILES['image']['tmp_name']);
+            $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
+            $extension = strrchr($_FILES['image']['name'],'.');
+
+            if(!in_array($extension, $extensions))
+            {
+                $fileError = "wrong-extension";
+            }
+
+            if($taille > $tailleMax)
+            {
+                $fileError = "size";
+            }
+
+            $insert=$bdd->prepare("INSERT INTO photos(nompho,slidepho,image) VALUES (:np,:sp,:img)");
+            $insert->execute(array(
                 "np"=>$nompho,
                 "sp"=>$slidepho,
                 "img"=>$image
             ));
-            $update->closeCursor();
-            header("LOCATION:administration.php?valid=modif");
-       }
-       else
-       {
-           header("LOCATION:administration.php?error".$err);
-       }
+            $insert->closeCursor();
+            header("LOCATION:administration.php");
+        }
+        else
+        {
+            header("LOCATION:modifier.php?err=".$err);
+        }
+        
     }
-    else
-    {
-        header("LOCATION:administration.php?err=isset");
+    else{
+        header('LOCATION:modifier.php?id='.$id);
     }
 ?>
